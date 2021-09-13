@@ -1,8 +1,9 @@
 /*
 * File: MainWindow.java
-* Author: Nagy József
-* Copyright: 2021, Nagy József 
-* Date: 2021-09-11
+* Author: Sallai András
+* Original from repoker, from Nagy József
+* Copyright: 2021, Sallai András 
+* Date: 2021-09-13
 * Licenc: MIT
 *
 */
