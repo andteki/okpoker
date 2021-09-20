@@ -9,6 +9,19 @@ public class MainModel {
 
     public MainModel() {
     }
+
+    public ArrayList<Player> getList() {
+        ArrayList<Player> playerList = new ArrayList<>();
+        ArrayList<String> lines = readState();
+        for(String line: lines) {
+            String[] lineArray = line.split(":");
+            Player player = new Player();
+            player.setName(lineArray[0]);
+            player.setCredit( Integer.parseInt(lineArray[1]));
+            playerList.add(player);
+        }
+        return playerList;
+    }
     
     public ArrayList<String> readState() {
         ArrayList<String> lines = new ArrayList<>();

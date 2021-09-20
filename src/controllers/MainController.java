@@ -10,9 +10,11 @@
 
 package controllers;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import models.MainModel;
+import models.Player;
 import views.MainWindow;
 
 public class MainController {
@@ -40,7 +42,15 @@ public class MainController {
         this.mainWindow = mainWindow;
         this.initEvent();
         MainModel mainModel = new MainModel();
-        mainModel.readState();
+        
+        // mainModel.getList().get(1).getName()
+
+        ArrayList<Player> playerList = mainModel.getList();
+        Player player = playerList.get(1);
+        System.out.println(player.getName());
+
+
+        System.out.println(); 
     }
 
   
