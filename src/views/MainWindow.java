@@ -17,6 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MainWindow extends JFrame {
+
     public JButton startBtn = new JButton("Start");
     public JButton stopBtn = new JButton("Stop");
     public JButton nextBtn = new JButton("Következő");
@@ -31,8 +32,16 @@ public class MainWindow extends JFrame {
     public JButton turnButton = new JButton();
     public JButton riverButton = new JButton();
 
-
     public MainWindow() {
+        initUI();
+    }
+    private void initUI() {
+        initTable();
+        initHand();
+        initButtons();
+        initFrame();
+    }
+    private void initTable() {
         this.tablePanel.setSize(100, 100);
         this.tablePanel.setBackground(Color.LIGHT_GRAY);
         this.tablePanel.add(flop1Btn);
@@ -41,10 +50,13 @@ public class MainWindow extends JFrame {
         /* A flop-nak nem kell megjelennie flop előtti állapotban */
         this.flop1Btn.setVisible(false);
         this.flop2Btn.setVisible(false);
-        this.flop3Btn.setVisible(false);
+        this.flop3Btn.setVisible(false);        
+    }
+    private void initHand() {
         this.handPanel.add(this.humanCard1Btn);
-        this.handPanel.add(this.humanCard2Btn);
-
+        this.handPanel.add(this.humanCard2Btn);        
+    }
+    private void initButtons() {
         this.buttonPanel.add(startBtn);
         this.buttonPanel.add(nextBtn);
         this.buttonPanel.add(stopBtn);
@@ -52,17 +64,15 @@ public class MainWindow extends JFrame {
         this.tablePanel.add(riverButton);
         this.turnButton.setVisible(false);
         this.riverButton.setVisible(false);
-                
-
+    }
+    private void initFrame() {
         this.setLayout(new BoxLayout(
             this.getContentPane(), 
             BoxLayout.PAGE_AXIS));
-
         this.add(buttonPanel);
         this.add(tablePanel);
         this.add(handPanel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(300, 250);
     }
-    
 }
